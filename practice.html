@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="practice.css">
+    <title>color</title>
+</head>
+<body>
+    <div class="header-content">
+        <!-- header section -->
+        <div class="logo">
+            <img src="/image/letter-c (3).png" alt="" style="width: 60px; height: 60px;">
+            <img src="/image/letter-o (4).png" alt="">
+            <img src="/image/letter-o (4).png" alt="">
+            <img src="/image/letter-l.png" alt="">
+            <img src="/image/letter-k (2).png" alt="" style="width: 60px; height: 60px;">
+            <img src="/image/letter-i (3).png" alt="">
+            <img src="/image/letter-t-.png" alt="">
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#color-picker-section">Color-Picker</a></li>
+                <li><a href="#gradient-section">Generate Gradient</a></li>
+                <li><a href="#Generate">customize color</a></li>
+                <li><a href="#explore">Colors Themes</a></li>
+            </ul>
+        </nav>
+    
+        <!-- Theme Toggle -->
+        <section id="theme-toggle-section">
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider round"></span>
+            </label>
+        </section>
+    
+        <div class="account">
+            <button id="account-btn">Account</button>
+            <!-- Account Modal -->
+            <div id="account-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <!-- Account Form -->
+                    <h2>Account</h2>
+                    <form id="login-form">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                        <button type="submit">Login</button>
+                    </form>
+                    <p>Don't have an account? <a href="#">Sign up</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Color Design Toolkit &copy; 2024</p>
+        <p>Enhancing color harmony for better designs.</p>
+    </footer>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+        <script src="practice.js"></script>
+    </body>
+    </html>

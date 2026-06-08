@@ -1,0 +1,61 @@
+/* Container to hold all palettes */
+.predefined-palettes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Palette container - horizontal arrangement */
+.palette {
+    display: flex;
+    flex-direction: row; /* Horizontal alignment of colors */
+    width: 450px; /* Increase width */
+    height: 200px; /* Increase height */
+    margin: 10px;
+    position: relative;
+    border-radius: 10px; /* Add rounded corners */
+    overflow: hidden; /* To prevent overflow */
+}
+
+/* Each color block inside a palette */
+.palette-item {
+    width: 20%; /* Each color takes up 1/5th of the palette's width */
+    height: 100%; /* Full height */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+    font-size: 16px; /* Increase font size for better readability */
+}
+
+.palette-item:hover {
+    transform: scale(1.05);
+}
+
+/* Copied message when a color is clicked */
+.copied-message {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* background-color: rgba(0, 0, 0, 0.75); */
+    /* color: white; */
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .palette {
+        width: 100%; /* Make palettes full-width on small screens */
+        height: 100px; /* Increase height slightly on smaller screens */
+    }
+
+    .palette-item {
+        font-size: 14px; /* Adjust text size for smaller screens */
+    }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Design Toolkit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #f0f0f0;
+        }
+
+        .palette-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .palette {
+            display: flex;
+            margin: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .palette div {
+            height: 100px;
+            width: 100px;
+        }
+
+        .blue-nova { background-color: #2A4D6F; }
+        .peach-fuzz { background-color: #FFD8B5; }
+        .soft-neutral { background-color: #E5E4E1; }
+
+        .upward { background-color: #B0D7FF; }
+        .renew-blue { background-color: #A3C4C9; }
+        .warm-honey-beige { background-color: #EDDCC0; }
+
+        .peachy-pastel { background-color: #FFD6C2; }
+        .light-sky-blue { background-color: #C4E3FF; }
+        .white-accent { background-color: #FFFFFF; }
+
+        h2 {
+            margin-top: 40px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>2024 Color Trends</h2>
+    
+    <div class="palette-container">
+        <!-- Blue Nova + Peach Fuzz + Soft Neutral Palette -->
+        <div class="palette">
+            <div class="blue-nova"></div>
+            <div class="peach-fuzz"></div>
+            <div class="soft-neutral"></div>
+        </div>
+
+        <!-- Upward + Renew Blue + Warm Honey Beige Palette -->
+        <div class="palette">
+            <div class="upward"></div>
+            <div class="renew-blue"></div>
+            <div class="warm-honey-beige"></div>
+        </div>
+
+        <!-- Peachy Pastel + Light Sky Blue + White Accent Palette -->
+        <div class="palette">
+            <div class="peachy-pastel"></div>
+            <div class="light-sky-blue"></div>
+            <div class="white-accent"></div>
+        </div>
+    </div>
+
+</body>
+</html>

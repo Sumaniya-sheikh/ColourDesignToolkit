@@ -1,0 +1,514 @@
+
+/* Global Styles */
+body {
+    font-family:serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #baebf8, #62d0e7);
+    color: #090000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* header section */
+header {
+    background: linear-gradient(to right, #024F55, #3c949e);
+    color: #23c1e8;
+    width: 100%;
+    height: 70%;
+    padding: 40px 20px;
+    text-align: center;
+    animation: fadeInDown 1s ease;
+    overflow-x: hidden;
+   
+    
+}
+.text{
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+    position: relative;
+    left: 10%;
+    font: 900;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+}
+/* header .logo .img{
+   font-size: 2rem;
+} */
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 10px;
+}
+
+.nav-menu ul li {
+    margin: 0 20px;
+}
+
+.nav-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.account {
+    position:absolute;
+    top: 7%;
+    left: 83%;
+}
+
+#account-btn {
+    background: none;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+#account-btn:hover {
+    background: rgba(231, 203, 203, 0.2);
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* end of header section */
+/* Section Layouts */
+section {
+    width: 90%;
+    max-width: 100%;
+    background-color: #ffffff;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.5s ease;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .nav-menu ul li {
+        margin: 10px 0;
+    }
+}
+
+
+/* Color Picker Styling */
+#color-picker {
+    margin: 20px auto;
+    width: 320px;
+    height: 320px;
+}
+
+/* Preview Box */
+#color-preview {
+    width: 100%;
+    height: 100px;
+    background-color: #f0f0f0;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s ease;
+}
+
+#palette-preview {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Gradient Section */
+#gradient-preview {
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: background 0.5s ease;
+
+}
+
+/* for all  Buttons */
+button{
+    background: linear-gradient(to right, #024F55, #3c949e);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#add-color-btn, #save-palette-btn, #share-palette-btn{
+    margin-top: 41px;
+    margin-left: 20px;
+    position: relative;
+    left: 34%;
+
+}
+button:hover {
+    background-color: #2980b9;
+}
+
+#share-section {
+    display: none; /* Initially hidden */
+}
+#palette-preview .color-box {
+    margin: 10px;
+}
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Gradient Section Styles */
+#gradient-section {
+    margin-top: 20px;
+}
+
+#gradient-preview {
+    transition: background 0.5s ease;
+}
+/* gradient button */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#gradient-code {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+
+/* palette code *//* palette code *//* palette code */
+
+#custom-color-inputs {
+    display: flex;
+    align-items: center;
+    justify-content: center;/* Center items */
+}
+h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.custom-color-inputs .custom-color-input-item {
+    margin: 4px;
+}
+
+.custom-color-inputs, .custom-color-input-item input {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    height: 40px;
+    width: 40px;
+}
+
+.custom-color-inputs .custom-palette-count select {
+    height: 34px;
+    margin: 4px;
+}
+#custom-palette-count-input{
+    /* padding: 0.35rem; */
+    height: 30px;
+    width: 40px;
+    margin: 5px;
+}
+/* Increase custom palette height */
+.custom-palette {
+    display: flex;
+    border: 1px solid red;
+    flex-wrap: nowrap;
+    height: 200px;/* Enable scrolling if the palette exceeds the height */
+}
+
+.custom-palette-item {
+    background-color: var(--palette-color);
+    height: 100%;
+    width: 150px;
+    position: relative;
+    flex: 1;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.custom-palette-item:hover {
+    transform: scale(1.05);
+}
+
+.custom-palette-color-value {
+    position: absolute;
+    display: inline-flex;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: var(--name-color);
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style for the copied message (without animation) */
+.copied-message {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .custom-palette {
+        flex-direction: column; /* Stack items vertically on small screens */
+        height: auto; /* Allow height to adjust based on content */
+    }
+    .custom-palette-item {
+        width: 100%; /* Make palette items full width */
+    }
+}
+/* predefined palette code  */ /* predefined palette code  */
+
+/* Container to hold all palettes */
+#predefined-palettes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Palette container - horizontal arrangement */
+.palette {
+    display: flex;
+    flex-direction: row; /* Horizontal alignment of colors */
+    width: 450px; /* Increase width */
+    height: 200px; /* Increase height */
+    margin: 10px;
+    border: none;
+    position: relative;
+    border-radius: 15px; /* Add rounded corners */
+    overflow: hidden; /* To prevent overflow */
+}
+
+/* Each color block inside a palette */
+.palette-item {
+    width: 20%; /* Each color takes up 1/5th of the palette's width */
+    height: 100%; /* Full height */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+    font-size: 16px; /* Increase font size for better readability */
+}
+
+.palette-item:hover {
+    transform: scale(1.05);
+}
+/* Copied message when a color is clicked */
+.copied-message {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* background-color: rgba(0, 0, 0, 0.75); */
+    /* color: white; */
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .palette {
+        width: 100%; /* Make palettes full-width on small screens */
+        height: 100px; /* Increase height slightly on smaller screens */
+    }
+
+    .palette-item {
+        font-size: 14px; /* Adjust text size for smaller screens */
+    }
+}
+/* predefined palette code  *//* predefined palette code  */
+
+
+
+
+/* Additional Coloring Feature Styles */
+#additional-coloring {
+    text-align: center;
+}
+
+.color-themes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.theme-item {
+    width: 200px;
+    margin: 10px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.theme-preview {
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Theme Switch */
+/* .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+} */
