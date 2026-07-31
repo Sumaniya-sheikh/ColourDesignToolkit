@@ -1,0 +1,29 @@
+/* ===================================
+   RESPONSIVE
+=================================== */
+
+@media(max-width:768px){
+
+.header-content{
+    text-align:center;
+}
+
+.account{
+    position:static;
+    margin-top:20px;
+}
+
+.nav-menu ul{
+    flex-direction:column;
+    gap:15px;
+}
+
+.button-group{
+    flex-direction:column;
+}
+
+.palette{
+    width:100%;
+}
+
+}

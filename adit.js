@@ -81,7 +81,7 @@ const savedPalettes = []; // Mock database
 
 // color picker save and share button code  // color picker save and share button code
 // Initialize the iro.js color picker
-const colorWheel = new iro.ColorPicker('#color-picker', {
+const colorWheel = new iro.ColorPicker('#color-picker', { 
     width: 320,
     color: "#f00"
 });
@@ -113,9 +113,15 @@ document.getElementById('save-palette-btn').addEventListener('click', () => {
     if (isUserLoggedIn) {
         const paletteColors = Array.from(document.getElementById('palette-preview').children).map(colorBox => colorBox.style.backgroundColor);
         savedPalettes.push(paletteColors);
-        alert('Palette saved successfully!');
+      showMessage(
+    document.getElementById("save-palette-btn"),
+    "Palette Saved!"
+);
     } else {
-        alert('Please log in to save your palette.');
+      showMessage(
+    document.getElementById("save-palette-btn"),
+    "Please log in first!"
+);
     }
 });
 // Event listener for sharing the palette
@@ -126,18 +132,28 @@ document.getElementById('share-palette-btn').addEventListener('click', () => {
 document.getElementById('copy-link-btn').addEventListener('click', () => {
     const paletteColors = Array.from(document.getElementById('palette-preview').children).map(colorBox => colorBox.style.backgroundColor).join(', ');
     const link = `https://color-toolkit.com/share?colors=${encodeURIComponent(paletteColors)}`;
-    navigator.clipboard.writeText(link).then(() => {
-        alert('Link copied to clipboard!');
-    }).catch(err => {
-        console.error('Failed to copy link: ', err);
-    });
+   navigator.clipboard.writeText(link).then(() => {
+
+    showMessage(
+        document.getElementById("copy-link-btn"),
+        "Link Copied!"
+    );
+
+}).catch(err => {
+    console.error(err);
+});
 });
 // color picker save and share button code ends // color picker save and share button code ends
 
 // Share on social media section starts here// Share on social media section starts here
 // Share on social media (mock)
-document.getElementById('share-social-btn').addEventListener('click', () => {
-    alert('Shared on social media!');
+document.getElementById("share-social-btn").addEventListener("click", () => {
+
+    showMessage(
+        document.getElementById("share-social-btn"),
+        "Shared!"
+    );
+
 });
 // Share on social media section ends here  // Share on social media section ends here
 
@@ -187,13 +203,19 @@ document.getElementById('generate-gradient-btn').addEventListener('click', () =>
 document.getElementById('copy-gradient-btn').addEventListener('click', () => {
     const gradientCode = document.getElementById('gradient-code').textContent;
     if (gradientCode) {
-        navigator.clipboard.writeText(gradientCode).then(() => {
-            alert('Gradient CSS copied to clipboard!');
-        }).catch(err => {
-            console.error('Failed to copy text: ', err);
-        });
+       navigator.clipboard.writeText(gradientCode).then(() => {
+
+    showMessage(
+        document.getElementById("copy-gradient-btn"),
+        "Gradient Copied!"
+    );
+
+});
     } else {
-        alert('Please generate a gradient first!');
+      showMessage(
+    document.getElementById("generate-gradient-btn"),
+    "Generate a gradient first!"
+);
     }
 });
 // Event listener for generating the gradient // Event listener for generating the gradient
@@ -241,7 +263,8 @@ function generateCustomPalette(color1, color2, paletteCount) {
         // Add click event to copy color code and show "Copied!" message
         customPaletteItem.addEventListener("click", function () {
             copyToClipboard(color);
-            showCopiedMessage(customPaletteItem); // Show the "Copied!" message
+
+showMessage(customPaletteItem, "Copied!"); // Show the "Copied!" message
         });
 
         // Append the palette item to the container
@@ -250,27 +273,23 @@ function generateCustomPalette(color1, color2, paletteCount) {
 }
 // Function to copy text to clipboard
 function copyToClipboard(text) {
-    const tempInput = document.createElement("input");
-    document.body.appendChild(tempInput);
-    tempInput.value = text;
-    tempInput.select();
-    document.execCommand("copy");
-    document.body.removeChild(tempInput);
+    navigator.clipboard.writeText(text)
+        .catch(err => console.error("Copy failed:", err));
 }
 // Function to show the "Copied!" message
-function showCopiedMessage(paletteItem) {
-    const copiedMessage = document.createElement("span");
-    copiedMessage.textContent = "Copied!";
-    copiedMessage.classList.add("copied-message");
+// function showCopiedMessage(paletteItem) {
+//     const copiedMessage = document.createElement("span");
+//     copiedMessage.textContent = "Copied!";
+//     copiedMessage.classList.add("copied-message");
 
-    // Append the copied message to the palette item
-    paletteItem.appendChild(copiedMessage);
+//     // Append the copied message to the palette item
+//     paletteItem.appendChild(copiedMessage);
 
-    // Remove the message after 1.5 seconds (1500 ms)
-    setTimeout(() => {
-        copiedMessage.remove();
-    }, 1500);
-}
+//     // Remove the message after 1.5 seconds (1500 ms)
+//     setTimeout(() => {
+//         copiedMessage.remove();
+//     }, 1500);
+// }
 // Run the script once the window has loaded
 window.addEventListener("load", () => {
     runCustomPalette();
@@ -413,10 +432,9 @@ function generatePredefinedPalettes() {
                 paletteItem.appendChild(paletteColorValue);
 
                 paletteItem.addEventListener("click", function () {
-                    copyToClipboard(color);
-                    showCopiedMessage(paletteItem);
-                });
-
+    copyToClipboard(color);
+    showMessage(paletteItem, "Copied!");
+});
                 paletteDiv.appendChild(paletteItem);
             });
 
@@ -425,23 +443,38 @@ function generatePredefinedPalettes() {
     });
 }
 window.addEventListener("load", generatePredefinedPalettes);
-function copyToClipboard(text) {
-    const tempInput = document.createElement("input");
-    document.body.appendChild(tempInput);
-    tempInput.value = text;
-    tempInput.select();
-    document.execCommand("copy");
-    document.body.removeChild(tempInput);
-}
-function showCopiedMessage(paletteItem) {
-    const copiedMessage = document.createElement("span");
-    copiedMessage.textContent = "Copied!";
-    copiedMessage.classList.add("copied-message");
+// function copyToClipboard(text) {
+//     const tempInput = document.createElement("input");
+//     document.body.appendChild(tempInput);
+//     tempInput.value = text;
+//     tempInput.select();
+//     document.execCommand("copy");
+//     document.body.removeChild(tempInput);
+// }
+// function showCopiedMessage(paletteItem) {
+//     const copiedMessage = document.createElement("span");
+//     copiedMessage.textContent = "Copied!";
+//     copiedMessage.classList.add("copied-message");
 
-    paletteItem.appendChild(copiedMessage);
+//     paletteItem.appendChild(copiedMessage);
+
+//     setTimeout(() => {
+//         copiedMessage.remove();
+//     }, 1500);
+// }
+
+function showMessage(element, message = "Success!") {
+
+    const messageBox = document.createElement("span");
+
+    messageBox.textContent = message;
+
+    messageBox.className = "copied-message";
+
+    element.appendChild(messageBox);
 
     setTimeout(() => {
-        copiedMessage.remove();
+        messageBox.remove();
     }, 1500);
 }
 // predefined palette code ends Here // predefined palette code ends Here// predefined palette code ends Here

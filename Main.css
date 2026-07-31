@@ -1,0 +1,41 @@
+/* ===================================
+   VARIABLES
+=================================== */
+
+:root {
+    --primary: #024F55;
+    --secondary: #3c949e;
+    --background: #baebf8;
+    --background2: #62d0e7;
+    --white: #fff;
+    --black: #090000;
+    --hover: #2980b9;
+    --radius: 10px;
+}
+
+/* ===================================
+   RESET
+=================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* ===================================
+   GLOBAL
+=================================== */
+
+body {
+    font-family: serif;
+    background: linear-gradient(to bottom, var(--background), var(--background2));
+    color: var(--black);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow-x: hidden;
+}
+
+

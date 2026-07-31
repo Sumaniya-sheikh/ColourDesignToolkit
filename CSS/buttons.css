@@ -1,0 +1,36 @@
+/* ===================================
+   BUTTONS
+=================================== */
+
+button {
+    background: linear-gradient(to right,
+            var(--primary),
+            var(--secondary));
+
+    color: white;
+
+    border: none;
+
+    padding: 10px 20px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+button:hover {
+    background: var(--hover);
+}
+
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    margin: 25px 0;
+
+    flex-wrap: wrap;
+}
